@@ -3,3 +3,5 @@ rootProject.name = "Mobiquity App"
 include ':app'
 include ':domain'
 include ':data'
+include ':presentation_shared'
+include ':ui'
