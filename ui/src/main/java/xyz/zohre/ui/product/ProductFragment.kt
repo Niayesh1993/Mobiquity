@@ -1,7 +1,7 @@
 package xyz.zohre.ui.product
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_product.*
 import xyz.zohre.presentation_shared.BaseFragment
+import xyz.zohre.presentation_shared.adapter.BaseViewHolder
 import xyz.zohre.presentation_shared.shortToast
 import xyz.zohre.ui.R
 
@@ -17,6 +18,7 @@ class ProductFragment : BaseFragment() {
 
     private val viewModel: ProductViewModel by getLazyViewModel()
     private val adapter = CategoryRecyclerAdapter()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +33,12 @@ class ProductFragment : BaseFragment() {
 
         category_recycler.adapter = adapter
         category_recycler.itemAnimator = DefaultItemAnimator()
+
+        adapter.itemClickListener = BaseViewHolder.OnItemClickListener { _, item ->
+            val action = ProductFragmentDirections.actionProductFragmentToProductDetailFragment(item)
+            findNavController().navigate(action)
+        }
+
         initObservers()
         progressbar.visibility = View.VISIBLE
         viewModel.loadCategories()

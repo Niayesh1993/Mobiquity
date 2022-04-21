@@ -25,10 +25,12 @@ fun bindImage(
     val withContext = Glide.with(imageView.context)
     val request = if (!imageUrl.isNullOrBlank()) {
         withContext
-            .load("""$imageUrl""")
+            .load("""${IMAGE_BASE_URL}$imageUrl""")
             .error(R.drawable.bg_no_image)
     } else {
         withContext.load(R.drawable.bg_no_image)
     }
     request.into(imageView)
 }
+
+const val IMAGE_BASE_URL = BuildConfig.BASE_URL

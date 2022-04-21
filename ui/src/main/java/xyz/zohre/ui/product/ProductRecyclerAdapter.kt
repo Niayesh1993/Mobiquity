@@ -19,7 +19,7 @@ class ProductRecyclerAdapter: BaseRecyclerAdapter<Product,
         BaseViewHolder.OnItemClickListener<Product>>() {
 
     override fun viewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        return ProductRecyclerAdapter.ViewHolder(
+        return ViewHolder(
             LayoutInflater.from(parent?.context).inflate(
                 R.layout.row_item_product,
                 parent,
@@ -31,7 +31,6 @@ class ProductRecyclerAdapter: BaseRecyclerAdapter<Product,
 
     override fun onBindView(holder: ViewHolder?, position: Int) {
         holder?.bind(data[position])    }
-
 
     class ViewHolder(itemView: View,
                      adapter: ProductRecyclerAdapter,)
