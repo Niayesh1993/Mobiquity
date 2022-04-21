@@ -6,6 +6,6 @@ import xyz.zohre.data.model.Category
 
 interface RemoteDataSource {
 
-    @GET("/v1/gifs/random")
+    @GET("/")
     suspend fun getProducts(): Response<List<Category>>
 }

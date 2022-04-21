@@ -1,4 +1,4 @@
-package xyz.zohre.presentation
+package xyz.zohre.presentation_shared
 
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.

@@ -10,5 +10,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:paddingTop="@dimen/small_margin"
-        android:paddingBottom="8dp" />
+        android:paddingBottom="@dimen/small_margin" />
 </LinearLayout>

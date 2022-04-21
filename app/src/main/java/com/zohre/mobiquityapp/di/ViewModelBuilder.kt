@@ -1,4 +1,4 @@
-package xyz.zohre.picnic.di
+package com.zohre.mobiquityapp.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

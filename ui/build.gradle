@@ -50,8 +50,11 @@ dependencies {
     implementation dependenciesList.material
     testImplementation dependenciesList.junit
     implementation project(path: ':data')
+    implementation project(path: ':domain')
     implementation project(path: ':presentation_shared')
     implementation 'androidx.core:core-ktx:1.7.0'
+    implementation "com.github.bumptech.glide:glide:4.12.0"
+    kapt "com.github.bumptech.glide:compiler:4.13.0"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     implementation dependenciesList.navigation
     implementation dependenciesList.navigation_ktx

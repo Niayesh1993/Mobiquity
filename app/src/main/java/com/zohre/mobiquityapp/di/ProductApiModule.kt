@@ -26,7 +26,7 @@ class ProductApiModule {
         }
         val client = builder.build()
         return Retrofit.Builder()
-            .baseUrl("https://mobcategories.s3-website-eu-west-1.amazonaws.com/")
+            .baseUrl("http://mobcategories.s3-website-eu-west-1.amazonaws.com")
             .addConverterFactory(
                 MoshiConverterFactory.create(
                     Moshi.Builder().add(KotlinJsonAdapterFactory()).build()

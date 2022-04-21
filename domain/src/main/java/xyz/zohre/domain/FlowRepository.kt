@@ -11,7 +11,7 @@ import xyz.zohre.domain.entities.ApiResult
  * [Result<R>].
  * Handling an exception (emit [ApiResult.Error] to the result) is the subclasses responsibility.
  */
-interface FlowRepository< R> {
+interface FlowRepository<R> {
     val coroutineDispatcher: CoroutineDispatcher
 
     suspend operator fun invoke(): Flow<ApiResult<R>> = execute()

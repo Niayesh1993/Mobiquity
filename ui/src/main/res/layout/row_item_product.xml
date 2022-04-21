@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/small_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/product_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="@dimen/small_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.029" />
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_marginTop="32dp"
+            android:text="Beer"
+            app:layout_constraintEnd_toStartOf="@+id/product_img"
+            app:layout_constraintHorizontal_bias="0.964"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_marginTop="12dp"
+            android:text="253.20"
+            app:layout_constraintEnd_toStartOf="@+id/product_img"
+            app:layout_constraintHorizontal_bias="0.995"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    
+
+
+</androidx.cardview.widget.CardView>

@@ -5,17 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DefaultItemAnimator
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_product.*
 import xyz.zohre.presentation_shared.BaseFragment
+import xyz.zohre.presentation_shared.shortToast
 import xyz.zohre.ui.R
 
 @AndroidEntryPoint
 class ProductFragment : BaseFragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val viewModel: ProductViewModel by getLazyViewModel()
+    private val adapter = CategoryRecyclerAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,12 +26,37 @@ class ProductFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_product, container, false)
     }
 
-    companion object {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProductFragment().apply {
-            }
+        category_recycler.adapter = adapter
+        category_recycler.itemAnimator = DefaultItemAnimator()
+        initObservers()
+        progressbar.visibility = View.VISIBLE
+        viewModel.loadCategories()
     }
+
+    private fun initObservers() {
+        viewModel.categories.observe(
+            viewLifecycleOwner,
+            {
+                progressbar.visibility = View.GONE
+                adapter.insertItems(it)
+            }
+        )
+        viewModel.loading.observe(
+            viewLifecycleOwner,
+            {
+                if (it) progressbar.visibility = View.VISIBLE
+            }
+        )
+        viewModel.showError.observe(
+            viewLifecycleOwner,
+            { event ->
+                event.getContentIfNotHandled()?.shortToast(this.requireView())
+                progressbar.visibility = View.GONE
+            }
+        )
+    }
+
 }

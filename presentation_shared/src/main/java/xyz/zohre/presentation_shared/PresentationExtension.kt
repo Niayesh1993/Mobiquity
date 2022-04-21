@@ -1,15 +1,19 @@
-package xyz.zohre.presentation
+package xyz.zohre.presentation_shared
 
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
-import xyz.zohre.presentation_shared.R
+import xyz.zohre.domain.exeption.RemoteCallException
 
-fun parseErrorStringRes(): TextData {
-
-    return TextData.TextStringRes(R.string.show_error)
-
+fun Throwable.parseErrorStringRes(): TextData {
+    return when (this) {
+        is RemoteCallException -> {
+            TextData.TextStringRes(R.string.remote_error)
+        }
+        else -> {
+            TextData.TextStringRes(R.string.unknown_error)
+        }
+    }
 }
-
 fun TextData.shortToast(view: View) {
     when (this) {
         is TextData.TextString -> Snackbar.make(view, this.text, Snackbar.LENGTH_LONG).show()

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="show_error">There was a problem communication with local memory</string>
+    <string name="remote_error">There was a problem communication with servers</string>
+    <string name="unknown_error">An Unexpected error happened</string>
 </resources>

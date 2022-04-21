@@ -44,4 +44,7 @@ dependencies {
     testImplementation dependenciesList.junit
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     implementation 'androidx.core:core-ktx:1.7.0'
+    implementation "com.github.bumptech.glide:glide:4.12.0"
+    kapt "com.github.bumptech.glide:compiler:4.12.0"
+    implementation project(path: ':domain')
 }
