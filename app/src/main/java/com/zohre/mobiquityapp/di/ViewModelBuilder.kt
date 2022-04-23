@@ -2,7 +2,6 @@ package com.zohre.mobiquityapp.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.zohre.mobiquityapp.di.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

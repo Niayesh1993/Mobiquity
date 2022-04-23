@@ -38,7 +38,6 @@ class ProductRecyclerAdapter: BaseRecyclerAdapter<Product,
         override fun bind(t: Product) {
 
             itemView.product_name.text = t.name
-            itemView.product_price.text = t.salePrice.amount.toString()
 
             bindImage(
                 imageUrl = t.url,

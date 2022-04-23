@@ -103,6 +103,15 @@ On the other hand, Coroutine is lighter than Rx. It's native and somehow
 it's easier to test because Google has created some libraries for that.
 
 
+## Test
+
+I wrote 2 tests for the repository in my data layer.
+It tries to check multiple cases using Mock and JUnit.
+
+I tried to use stubs. [Stubs do better in terms of state verification](https://martinfowler.com/articles/mocksArentStubs.html)
+, but I added Mockk for Repository test and show how we can Leverage behavior verification tools in a good way.
+
+
 ## UX
 
 I keep UI minimal and tried to show I know how to use things like constraint layout, styles, dimens drawables, etc, but I know from the user side it's not good at all.

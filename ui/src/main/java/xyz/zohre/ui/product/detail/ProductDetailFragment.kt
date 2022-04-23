@@ -15,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_product_detail.*
 import kotlinx.android.synthetic.main.row_item_product.view.*
 import xyz.zohre.data.model.Product
+import xyz.zohre.data.model.SalePrice
 import xyz.zohre.presentation_shared.BaseFragment
 import xyz.zohre.presentation_shared.bindImage
 import xyz.zohre.ui.R
@@ -42,7 +43,7 @@ class ProductDetailFragment : BaseFragment() {
 
     private fun initView() {
         pr_name.text = product.name
-        pr_amount.text = product.salePrice.amount.toString()
+        pr_amount.text = showPrice(product.salePrice)
 
         bindImage(
             imageUrl = product.url,
@@ -70,6 +71,10 @@ class ProductDetailFragment : BaseFragment() {
             }
 
         )
+    }
+
+    private fun showPrice(salePrice: SalePrice): String {
+        return salePrice.amount.toString() + " " + salePrice.currency
     }
 
 }

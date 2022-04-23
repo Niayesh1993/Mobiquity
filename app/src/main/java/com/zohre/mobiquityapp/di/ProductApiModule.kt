@@ -26,7 +26,7 @@ class ProductApiModule {
         }
         val client = builder.build()
         return Retrofit.Builder()
-            .baseUrl("http://mobcategories.s3-website-eu-west-1.amazonaws.com")
+            .baseUrl(BASE_URL)
             .addConverterFactory(
                 MoshiConverterFactory.create(
                     Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
@@ -35,5 +35,9 @@ class ProductApiModule {
             .client(client)
             .build()
             .create(RemoteDataSource::class.java)
+    }
+
+    companion object {
+        const val BASE_URL = xyz.zohre.presentation_shared.BuildConfig.BASE_URL
     }
 }

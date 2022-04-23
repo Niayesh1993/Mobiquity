@@ -58,4 +58,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     implementation dependenciesList.navigation
     implementation dependenciesList.navigation_ktx
+    // Local unit tests
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
