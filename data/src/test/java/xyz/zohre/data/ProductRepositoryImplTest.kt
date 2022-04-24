@@ -14,8 +14,6 @@ import retrofit2.Response
 import xyz.zohre.data.discovery.ProductRepositoryImpl
 import xyz.zohre.data.discovery.RemoteDataSource
 import xyz.zohre.data.model.Category
-import xyz.zohre.data.shared.MainCoroutineRule
-import xyz.zohre.data.shared.TestData
 import xyz.zohre.domain.entities.ApiResult
 
 class ProductRepositoryImplTest {
@@ -29,7 +27,7 @@ class ProductRepositoryImplTest {
     lateinit var remoteResult: Response<List<Category>>
 
     @get:Rule
-    var coroutineRule = MainCoroutineRule()
+    var coroutineRule = xyz.zohre.test_shared.MainCoroutineRule()
 
     @Before
     fun setup() {

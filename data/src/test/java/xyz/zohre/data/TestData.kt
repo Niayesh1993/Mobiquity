@@ -1,4 +1,4 @@
-package xyz.zohre.data.shared
+package xyz.zohre.data
 
 import xyz.zohre.data.model.*
 

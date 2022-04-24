@@ -37,6 +37,7 @@ dependencies {
 
     implementation dependenciesList.kotlinStdlib
     implementation dependenciesList.hiltAndroid
+    implementation project(path: ':test_shared')
     kapt dependenciesList.hiltCompiler
     implementation dependenciesList.kotlinKTX
     implementation dependenciesList.appCompat

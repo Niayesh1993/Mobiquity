@@ -16,7 +16,7 @@ In order to run this project you need the following:
 
 The project implemented with
 [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
-and [The Clean Architecture](https://developer.foursquare.com/docs/places-api/getting-started/])
+and [The Clean Architecture](https://www.raywenderlich.com/3595916-clean-architecture-tutorial-for-android-getting-started)
 
 
 ## Domain
@@ -73,6 +73,11 @@ BTW it seems that it's not hard to refactor this type to that.
 We could implement shared view related classes and themes here.
 Also, we could start our design system here before we make a different module for that.
 
+## Test Shared Module
+
+It's hard to import test folder with gradle. In this way we can handle it and also with `api`
+keyword for shared SDKs in test gradle, we avoid some boilerplate as well.
+
 
 # Technologies And Decisions
 In this section I'll try to explain reason behind some of my decisions
@@ -105,7 +110,7 @@ it's easier to test because Google has created some libraries for that.
 
 ## Test
 
-I wrote 2 tests for the repository in my data layer.
+I wrote 2 tests for the repository in my data layer and one unit test for my view model in ui layer.
 It tries to check multiple cases using Mock and JUnit.
 
 I tried to use stubs. [Stubs do better in terms of state verification](https://martinfowler.com/articles/mocksArentStubs.html)

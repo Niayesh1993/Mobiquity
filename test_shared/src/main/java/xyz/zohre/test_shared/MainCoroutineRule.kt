@@ -1,4 +1,4 @@
-package xyz.zohre.data.shared
+package xyz.zohre.test_shared
 
 /*
  * Copyright 2019 Google LLC

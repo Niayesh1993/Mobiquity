@@ -1,21 +1,24 @@
-package xyz.zohre.ui
+package xyz.zohre.ui.product
 
-import org.junit.Before
-import org.junit.Rule
-import xyz.zohre.data.shared.MainCoroutineRule
-import xyz.zohre.ui.product.ProductViewModel
 import kotlinx.coroutines.delay
 import org.junit.Assert
+import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
-import xyz.zohre.data.shared.TestData
-import xyz.zohre.data.shared.runBlockingTest
-import xyz.zohre.ui.util.LiveDataTestUtil
+import xyz.zohre.test_shared.runBlockingTest
+import xyz.zohre.ui.FakeProductRepository
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import xyz.zohre.test_shared.LiveDataTestUtil
+import xyz.zohre.ui.TestData
 
 
-class ProductViewModelTest {
+class ProductViewModelTest{
 
     @get:Rule
-    var coroutineRule = MainCoroutineRule()
+    var coroutineRule = xyz.zohre.test_shared.MainCoroutineRule()
+
+    @get:Rule
+    var instantTaskExecutorRule = InstantTaskExecutorRule()
 
 
     private lateinit var viewModel: ProductViewModel
